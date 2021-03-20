@@ -11,8 +11,8 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:background="@color/black"
-        app:tabTextColor="@color/startblue" />
+        android:background="@color/startblue"
+        app:tabTextColor="@color/white" />
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
