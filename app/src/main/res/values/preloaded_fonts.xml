@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/amaranth</item>
+        <item>@font/cantora_one</item>
+        <item>@font/domine</item>
+        <item>@font/fredoka_one</item>
+        <item>@font/typo_graphica</item>
+    </array>
+</resources>
