@@ -1,6 +1,7 @@
 package umn.ac.id.musicplayer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -42,9 +43,16 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
                     .into(holder.img_music);
         } else {
             Glide.with(mContext)
-                    .load(R.drawable.blue)
+                    .load(R.drawable.ic_baseline_image_24)
                     .into(holder.img_music);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, PlayerActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
