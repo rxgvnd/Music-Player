@@ -14,12 +14,16 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -36,7 +40,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        openDialog();
         permission();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==R.id.profile){
+            startActivity(new Intent(this, Profile.class));
+        } else if (item.getItemId() == R.id.logout) {
+            startActivity(new Intent(this, Dashboard.class));
+            Toast.makeText(getApplicationContext(), "Good Bye", Toast.LENGTH_SHORT).show();
+        }
+        return true;
     }
 
     private void permission() {
@@ -130,5 +152,10 @@ public class MainActivity extends AppCompatActivity {
             cursor.close();
         }
         return tempAudioList;
+    }
+
+    public void openDialog(){
+        WelcomeMessage dialogueClass = new WelcomeMessage();
+        dialogueClass.show(getSupportFragmentManager(),"welcome message");
     }
 }
