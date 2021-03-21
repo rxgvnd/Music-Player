@@ -43,13 +43,14 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
                     .into(holder.img_music);
         } else {
             Glide.with(mContext)
-                    .load(R.drawable.ic_baseline_image_24)
+                    .load(R.drawable.blue)
                     .into(holder.img_music);
         }
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, PlayerActivity.class);
+                intent.putExtra("position", position);
                 mContext.startActivity(intent);
             }
         });

@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -22,7 +22,7 @@
             android:gravity="center"
             android:text="Now Playing"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="35sp"
             android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
@@ -32,16 +32,16 @@
         android:layout_weight="1">
         <ImageView
             android:id="@+id/cover_art"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
+            android:layout_width="335dp"
+            android:layout_height="335dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="37dp"
             android:src="@drawable/ic_baseline_image_24" />
     </LinearLayout>
     <TextView
         android:id="@+id/song_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:ellipsize="end"
         android:fontFamily="@font/cantora_one"
         android:gravity="center_horizontal"
@@ -51,7 +51,7 @@
         android:textSize="22sp"
         android:textStyle="bold" />
     <TextView
-        android:id="@+id/song_artist"
+        android:id="@+id/artist_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8sp"
@@ -97,14 +97,14 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/layout_for_btm"
+        android:id="@+id/layout_for_btn"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_weight="1"
         android:background="@drawable/gradient_player"
         android:gravity="center">
         <ImageView
-            android:id="@+id/id_prev"
+            android:id="@+id/prevBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginEnd="16dp"
@@ -117,9 +117,9 @@
             android:clickable="true"
             android:focusable="true"
             android:src="@drawable/play"
-            app:backgroundTint="@color/white" />
+            app:backgroundTint="@color/black" />
         <ImageView
-            android:id="@+id/id_next"
+            android:id="@+id/nextBtn"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginStart="16dp"
